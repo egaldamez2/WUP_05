@@ -49,11 +49,15 @@ barchartGC(~infected + treatment,data=DrugUser, type="percent")
 
 ```
 
-21743 people took part of the test but only 10% of drug users in the population, and from looking at the bar chart, 25% of the people who took the drug weren't infected by aids. 
+21743 people took part of the test but only 10% of drug users in the population, and from looking at the bar chart,75% of people who took the placebo, and of the people who got sick, 25% got aids.
 
 ### Numerical Descriptive Results
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+
+
+
+
 
 ## Inferential Results
 
