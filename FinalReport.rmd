@@ -56,14 +56,35 @@ barchartGC(~infected + treatment,data=DrugUser, type="percent")
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
 
+```{r}
+table1 <- xtabs(~infected + treatment, data=DrugUser)
+rowPerc(table1)
+colPerc(table1)
+```
 
-
-
+out of 100% of the people that got aids, the people that took the drug, only 24.29 percent got sick and the one who the placebo. only 75.71 percent got sick.  
+ 
 ## Inferential Results
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
 
 
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+
+the fisher test odds ratio shows us that if we took the drug we would have a 0.354128 chance of getting aids compared to someone taking a placebo.
+
+
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+
+21743 people took part of the test but only 10% of drug users in the population, and from looking at the bar chart,75% of people who took the placebo, and of the people who got sick, 25% got aids.Out of 100% of the people that got aids, the people that took the drug, only 24.29 percent got sick and the one who the placebo. only 75.71 percent got sick. the fisher test odds ratio shows us that if we took the drug we would have a 0.354128 chance of getting aids compared to someone taking a placebo, with all the data shown today, we got the results of the drug does work and the chances of getting aids is 0.354.  
+
+
+
+
