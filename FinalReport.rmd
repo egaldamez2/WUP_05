@@ -17,11 +17,15 @@ triUmp <-read.csv(file="triUmpsal.csv",header=TRUE)
 
 A new  preventative aides drug (triUmpsal) is under test in clinical trials. Consider only the DrugUsers, does this drug seem effective?  Hint - use dplyr to obtain that subpopulation with the filter command.
 
+
 # Methods
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
 
-Today, I will be using file helper "My Tricks", the file will help me change the charters variables and using numerical, inferential and graphical methods, so that I can solve the problem for today assignment.   
+Today, I will be using file helper "My Tricks", the file will help me change the charters variables and using numerical, inferential and graphical methods, so that I can solve the problem for today assignment and filter the answers for the Drugstore.    
+```{r}
+DrugUser<-filter(triUmp, DrugUser == "yes")
+```
 
 # Results
 
@@ -29,9 +33,23 @@ Today, I will be using file helper "My Tricks", the file will help me change the
 
 ## Descriptive Results
 
+```{r eval=FALSE}
+triUmp <- triUmp %>%
+mutate(across(where(is.character), as.factor))
+```
+
 ### Graphical Descriptive Results
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question. Bottom line is to explain the features of the graph that are relevant to conforming or departing to what is expected by your null hypothesis !-->
+
+
+```{r}
+barchartGC(~infected + treatment,data=DrugUser)
+barchartGC(~infected + treatment,data=DrugUser, type="percent")
+
+```
+
+21743 people took part of the test but only 10% of drug users in the population, and from looking at the bar chart, 25% of the people who took the drug weren't infected by aids. 
 
 ### Numerical Descriptive Results
 
